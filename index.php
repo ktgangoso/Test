@@ -40,8 +40,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <h3 class="m-2 w-auto">DELAYED QUOTES</h3>
                 <div class="d-flex align-items-center ms-auto">
-                    <select class="form-select w-auto m-2" aria-label="Default select example" onchange="Exchange();">
-                        <option selected>Select Exchange</option>
+                    <select class="form-select w-auto m-2" aria-label="Default select example" >
                         <option value="1">SGX</option>
                         <option value="2">Bursa</option>
                     </select>

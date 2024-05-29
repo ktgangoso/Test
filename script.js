@@ -27,39 +27,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ///////////////////////////////////
 
-function Exchange() {
-    var selectBox = document.getElementById("optionDropdown");
-    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    
-    if(selectedValue === "1") {
-        // Send AJAX request
-        $.ajax({
-            url: 'fetch_data.php', // URL to your PHP script
-            method: 'POST',
-            success: function(response) {
-                // Update the result container with fetched data
-                displayData(response);
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    }
-    // Add similar conditions for other options if needed
-}
 
-function displayData(data) {
-    // Clear previous content
-    $('#resultContainer').empty();
-    
-    // Append new data to the result container
-    $.each(data, function(index, item) {
-        $('#resultContainer').append('<div class="stock-item">' +
-            '<p>' + item.StockCode + '</p>' +
-            '<p>' + item.LastVol + '</p>' +
-            '<p>' + item.Chng + '</p>' +
-            '<p>' + item.BuyVol + '</p>' +
-            '<p>' + item.SellVol + '</p>' +
-            '</div>');
-    });
-}
